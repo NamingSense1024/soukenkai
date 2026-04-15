@@ -1,0 +1,51 @@
+<style>
+.drawer-hide{
+    opacity: 0;
+    pointer-events: none;
+}
+.drawer-slided{
+    transform: translateX(100%);
+}
+</style>
+
+<div id="drawer-wrapper" class="drawer-hide md:hidden fixed inset-0 z-50 flex justify-end transition duration-300">
+    <div id="drawer-overlay" class="absolute inset-0 z-10 bg-black/40"></div>
+
+    <div id="drawer-content" class="drawer-slided relative z-20 h-full w-64 px-6 py-8 bg-myblack/80 text-slate-50 text-lg transition duration-300">
+        <h2 class="text-xl text-turquoise font-semibold">MENU</h2>
+        <div class="h-0.5 w-full bg-turquoise"></div>
+
+        <ul class="px-4 py-4 space-y-4">
+            <li>
+                <a href="index.html" class="">
+                    <p class="transition duration-300 hover:text-fuchsia-400 hover:translate-x-0.5">Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="about.html" class="">
+                    <p class="transition duration-300 hover:text-fuchsia-400 hover:translate-x-0.5">About</p>
+                </a>
+            </li>
+            <li>
+                <a href="rule.html" class="">
+                    <p class="transition duration-300 hover:text-fuchsia-400 hover:translate-x-0.5">Rule</p>
+                </a>
+            </li>
+            <li>
+                <a href="record.html" class="">
+                    <p class="transition duration-300 hover:text-fuchsia-400 hover:translate-x-0.5">Record</p>
+                </a>
+            </li>
+            <li>
+                <a href="event.html" class="">
+                    <p class="transition duration-300 hover:text-fuchsia-400 hover:translate-x-0.5">Event</p>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html" class="">
+                    <p class="text-fuchsia-500 transition duration-300 hover:text-fuchsia-700 hover:translate-x-0.5">Contact</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

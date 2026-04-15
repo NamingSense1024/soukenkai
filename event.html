@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    turquoise:'#5ce1e6',
+                    myblack:'#121212',
+                }
+            }
+        }
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+    <script src="js/index.js"></script> 
+    <script src="js/include.js"></script>
+
+
+    <style>
+    @keyframes down {
+    0% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(0,80px);
+    }
+    }
+    .scroll-bar {
+        animation: 3s forwards down infinite;
+    }
+    </style>
+    <title></title>
+</head>
+
+<body class="bg-myblack overscroll-y-none">
+    <div id="header" class="sticky top-0 z-50">
+        <div class="h-20 bg-myblack/50"></div>
+    </div>
+    <div id="drawer" class=""></div>
+
+
+    <section class="px-6 md:px-24 pt-16 md:pt-32 pb-16 md:pb-32 text-slate-50">
+        <div class="">
+            <div class="h-0.5 w-full md:w-[60vw] bg-slate-50"></div>
+            <div class="md:flex items-center justify-start gap-12 space-y-4 md:space-y-0">
+                <div class="relative md:h-32 w-fit text-5xl md:text-8xl">
+                    <h2 class="absolute top-0.5 left-0.5 w-fit text-turquoise font-serif font-bold">EVENT</h2>
+                    <h2 class="absolute -top-0.5 -left-0.5 w-fit text-fuchsia-500 font-serif font-bold">EVENT</h2>
+                    <h2 class="relative z-30 w-fit pr-4 text-slate-50 font-serif font-bold">EVENT</h2>    
+                </div>   
+                <div class="w-fit text-slate-50 text-2xl md:text-5xl font-bold bg-cyan-800">体験会スケジュール</div>
+            </div>
+            
+        </div>
+         <div class="md:flex items-center justify-between">
+            <img src="images/calendar.png" alt="" class="my-8 md:my-24 w-full md:w-[40vw] bg-cover">
+            <div class="px-0 md:px-12 py-4 md:py-48 text-slate-50 space-y-8 md:space-y-24">
+                <p class="text-sm md:text-lg/10 text-center">
+                    颯剣会は4月に体験会を実施しています。<br>
+                    主に京王井の頭線沿いの体育館で、月木に行っています。<br>
+                    参加希望の方は下のボタンからご連絡ください！
+                </p>
+                <a href="contact.html" class="block">
+                    <div class="flex items-center justify-center mx-auto w-56 h-14 border-[2px] border-turquoise transition-all duration-300 hover:bg-turquoise hover:-translate-y-1">
+                        <p class="text-lg text-slate-50 font-bold">Contact Us</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="px-6 md:px-24 pt-16 md:pt-32 pb-24 md:pb-64 text-slate-50">
+        <div class="mx-auto py-8 md:py-16 border-[1px] space-y-12 border-slate-50">
+            <h3 class="text-xl md:text-4xl font-bold text-center">体験会参加方法</h3>
+            <div class="md:flex items-center justify-center gap-12 px-4 md:px-24">
+                <ul class="flex flex-col items-start justify-between gap-12 pb-12 md:pb-0">
+                    <li class="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-8 w-full md:w-auto">
+                        <div class="flex items-center justify-center size-12 md:size-16 bg-cyan-700 rounded-full shrink-0">
+                            <p class="text-lg md:text-2xl font-mono font-bold">01</p>
+                        </div>
+                        <p class="text-sm md:text-lg">
+                            DMで「◯月◯日の体験会に◯人で参加したいです！」と連絡。
+                            人数に余裕があればOKの返信が来ます。
+                        </p>
+                    </li>
+                    <li class="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-8 w-full md:w-auto">
+                        <div class="flex items-center justify-center size-12 md:size-16 bg-cyan-700 rounded-full shrink-0">
+                            <p class="text-lg md:text-2xl font-mono font-bold">02</p>
+                        </div>
+                        <p class="text-sm md:text-lg">
+                            体験会の数日前に集合場所・時刻の告知があります。遅れる場合は連絡をください。
+                        </p>
+                    </li>
+                    <li class="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-8 w-full md:w-auto">
+                        <div class="flex items-center justify-center size-12 md:size-16 bg-cyan-700 rounded-full shrink-0">
+                            <p class="text-lg md:text-2xl font-mono font-bold">03</p>
+                        </div>
+                        <p class="text-sm md:text-lg">
+                            思いっきり楽しみましょう！！
+                        </p>
+                    </li>
+                </ul>
+                <div class="px-4 py-4 bg-cyan-700">
+                    <div class="px-6 md:px-16 py-4 md:py-8 space-y-2 bg-black/30">
+                        <h4 class="text-lg md:text-xl font-semibold">持ち物</h4>
+                        <p class="text-sm md:text-lg">
+                        ・動きやすい服装（汗をかきます）<br>
+                        ・タオル<br>
+                        ・飲み物<br>
+                        ※裸足で行うので靴は不要です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+</body>
+
+</html>

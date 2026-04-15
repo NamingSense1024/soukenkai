@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    turquoise:'#5ce1e6',
+                    myblack:'#121212',
+                }
+            }
+        }
+    }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+    <script src="js/index.js"></script> 
+    <script src="js/include.js"></script>
+
+    <style>
+    @keyframes down {
+    0% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(0,80px);
+    }
+    }
+    .scroll-bar {
+        animation: 3s forwards down infinite;
+    }
+    </style>
+    <title></title>
+</head>
+
+<body class="bg-myblack overscroll-y-none">
+    <div id="header" class="sticky top-0 z-50">
+        <div class="h-20 bg-myblack/50"></div>
+    </div>
+
+    <div id="drawer" class=""></div>
+
+    <div class="flex justify-between">
+        <img src="images/home/hero.png" alt="" class="max-h-screen object-contain">
+        <div class="hidden md:inline-block relative w-full">
+            <div class="absolute bottom-0 left-24">
+                <div class="flex gap-1">
+                    <div class="relative flex flex-col items-center">
+                        <div class="scroll-bar absolute top-4 size-3 rounded-full bg-slate-50">
+                            <div class="size-3 rounded-full bg-slate-50 animate-ping"></div>
+                        </div>
+                        <div class="w-0.5 h-48 bg-slate-50"></div>
+                        <div class="size-1.5 bg-slate-50"></div>
+                    </div>
+                    <p class="py-8 text-lg text-slate-50 [writing-mode:vertical-rl]">scroll</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="px-6 md:px-24 pt-24 md:pt-64 pb-24 md:pb-48">
+        <div class="">
+            <h2 class="text-3xl md:text-5xl text-slate-50 font-serif font-bold">颯剣会で、全国へ。</h2>
+            <div class="h-0.5 w-full md:w-[60vw] bg-slate-50"></div>
+        </div>
+        <div class="md:flex justify-between py-8 ">
+            <div class="px-2 md:px-8 py-8 md:py-24">
+                <p class="text-slate-50 text-sm md:text-lg leading-8 md:leading-10">
+                    <span class="text-lg md:text-3xl font-bold bg-cyan-800">スポーツチャンバラ。</span>
+                    <br>
+                    <br>
+                    一瞬の攻防。<br>
+                    高度な駆け引き。<br>
+                    <br>
+                    極限の打ち合いを制した者のみに与えられる、<br>
+                    グランドチャンピオンの称号。<br>
+                    <br>
+                    <span class="text-lg md:text-3xl font-bold">さあ、剣を握れ。</span>
+                    <br>
+                    <br>
+                    <span class="text-lg md:text-2xl font-bold">仲間と共に、</span>
+                    <br>
+                    <br>
+                    <span class="text-2xl md:text-4xl font-bold bg-fuchsia-800">闘え。</span><br>
+                </p>
+            </div>
+            <div class="py-8 md:py-32">
+                <div class="w-fit h-fit bg-fuchsia-800">
+                    <img src="images/home/battle_1.jpg" alt="" class="relative top-2 md:top-8 left-2 md:left-8 w-full md:w-[40vw] aspect-auto object-cover">
+                </div>
+            </div> 
+        </div>
+        <a href="about.html">
+            <div class="mx-auto flex items-center justify-center border-[2px] border-fuchsia-500  w-56 h-14 rounded-full transition-all duration-300 hover:bg-fuchsia-500 hover:-translate-y-1">
+                <p class="text-xl text-slate-50 font-semibold text-center">About Us</p>
+            </div>
+        </a>  
+    </section>
+    <section class="bg-gray-200 md:bg-[url('images/home/battle_2.png')] bg-cover text-gray-950 md:text-slate-50">
+        <div class="px-6 md:px-24 pt-24 md:pt-64 pb-24 md:pb-32 md:bg-gray-950/50">
+
+            <div>
+                <h2 class="my-2 text-3xl md:text-5xl font-bold text-center"><span class="bg-cyan-400/40">スポーツチャンバラ</span>とは？</h2>
+                <div class="h-0.5 w-full md:w-[50vw] mx-auto bg-gray-950 md:bg-slate-50"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-start justify-center gap-8 py-8 md:py-24">
+
+                <div class="w-full md:w-[25vw] px-8 py-8 bg-white/20 backdrop-blur-sm shadow-md">
+                    <div class="space-y-2 md:space-y-6">
+                        <img src="images/home/referee.jpg" alt="" class="mx-auto w-full md:w-[20vw] aspect-[1/1]">
+                        <h3 class="text-xl md:text-3xl font-bold text-center">シンプルなルール</h3>
+                        <p class="md:h-48 text-sm md:text-lg overflow-hidden text-ellipsis">
+                            「相手の体を先に叩いたら勝ち」という洗練されたルール。
+                            面、小手、胴はもちろん、足や肩など自由な打ちが可能！
+                            自分だけのオリジナル技を考える人も...！？
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-[25vw] px-8 py-8 bg-white/20 backdrop-blur-sm shadow-md">
+                    <div class="space-y-2 md:space-y-6">
+                        <img src="images/home/speedy.png" alt="" class="mx-auto w-full md:w-[20vw] aspect-[1/1]">
+                        <h3 class="text-xl md:text-3xl font-bold text-center">素早い攻防</h3>
+                        <p class="md:h-48 text-sm md:text-lg overflow-hidden text-ellipsis">
+                            楯を使った打ち合いや二刀流は必見！！
+                            ステップやフェイクで相手を崩し、連打を叩き込む。
+                            一瞬の油断が命取り。
+                            相手をよく観察し、弱点を探せ。   
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-[25vw] px-8 py-8 bg-white/20 backdrop-blur-sm shadow-md">
+                    <div class="space-y-2 md:space-y-6">
+                        <img src="images/home/safety.png" alt="" class="mx-auto w-full md:w-[20vw] aspect-[1/1]">
+                        <h3 class="text-xl md:text-3xl font-bold text-center">高い安全性</h3>
+                        <p class="md:h-48 text-sm md:text-lg overflow-hidden text-ellipsis">
+                            中にバルーンの入ったエアーソフト剣を使用！
+                            柔らかいので当たっても痛くない！
+                            専用の面で頭もしっかりガード。
+                            面を染めて自分だけの装飾をすることも可能！
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="rule.html" class="block">
+                <div class="mx-auto flex items-center justify-center border-[2px] border-turquoise w-56 h-14 rounded-full transition-all duration-300 hover:bg-turquoise hover:-translate-y-1">
+                    <p class="text-xl font-semibold text-center">View More</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <video src="videos/紹介動画_完成版3.mp4" loop autoplay muted class="mx-auto mt-0 md:mt-64 mb-12 md:mb-24 w-full block"></video>
+
+    <section class="px-6 md:px-24 pt-24 md:pt-64 pb-24 md:pb-32 text-slate-50">
+        <h2 class="text-3xl md:text-5xl font-bold">体験会日程</h2>
+        <div class="w-full md:w-[60vw] h-0.5 bg-slate-50"></div>
+        <div class="md:flex items-center justify-between">
+            <img src="images/calendar.png" alt="" class="my-8 md:my-24 w-full md:w-[40vw] bg-cover">
+            <div class="px-0 md:px-12 py-4 md:py-48 text-slate-50 space-y-8 md:space-y-24">
+                <p class="text-sm md:text-lg/10 text-center">
+                    颯剣会は4月に体験会を実施しています。<br>
+                    主に京王井の頭線沿いの体育館で、月木に行っています。<br>
+                    参加希望の方は下のボタンからご連絡ください！
+                </p>
+                <a href="contact.html" class="block">
+                    <div class="flex items-center justify-center mx-auto w-56 h-14 border-[2px] border-turquoise transition-all duration-300 hover:bg-turquoise hover:-translate-y-1">
+                        <p class="text-lg text-slate-50 font-bold">Contact Us</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+</body>
+
+</html>

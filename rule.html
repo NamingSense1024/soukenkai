@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    turquoise:'#5ce1e6',
+                    myblack:'#121212',
+                }
+            }
+        }
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+    <script src="js/index.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/rule.js"></script>
+    
+
+    <style>
+    @keyframes down {
+    0% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(0,80px);
+    }
+    }
+    .scroll-bar {
+        animation: 3s forwards down infinite;
+    }
+    </style>
+
+    <style>
+    .ac-content{
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.2s ease-out;
+    }
+    .ac-open{
+       grid-template-rows: 1fr;
+    }
+    .icon{
+        transition: transform 0.2s ease-out;
+    }
+
+    .modal{
+        transition: opacity 0.3s ease-out;
+    }
+    .modal-content{
+        overflow: hidden;
+    }
+    .modal-hide{
+        opacity: 0;
+        pointer-events: none;
+    }
+    .modal-slided{
+        transform: translateY(100%);
+    }
+    </style>
+    <title></title>
+</head>
+
+<body class="bg-myblack overscroll-y-none">
+    <div id="header" class="sticky top-0 z-50">
+        <div class="h-20 bg-myblack/50"></div>
+    </div>
+    <div id="drawer" class=""></div>
+
+
+   <section class="px-6 md:px-24 pt-16 md:pt-32 pb-4 md:pb-8 text-slate-50">
+        <div class="">
+            <div class="h-0.5 w-full md:w-[60vw] bg-slate-50"></div>
+            <div class="md:flex items-center justify-start gap-12 space-y-4 md:space-y-0">
+                <div class="relative md:h-32 w-fit text-5xl md:text-8xl font-serif font-bold">
+                    <h2 class="absolute top-0.5 left-0.5 w-fit text-turquoise">Rules</h2>
+                    <h2 class="absolute -top-0.5 -left-0.5 w-fit text-fuchsia-500">Rules</h2>
+                    <h2 class="relative z-30 w-fit pr-4 text-slate-50">Rules</h2>    
+                </div>   
+                <div class="w-fit text-slate-50 text-2xl md:text-5xl font-bold bg-cyan-800">スポーツチャンバラとは</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 md:px-0 pt-24 pb-8 md:pb-24 text-slate-50">
+        <div class="md:flex items-center justify-between md:py-24">
+            <div class="w-full md:w-[50vw] h-fit bg-fuchsia-800">
+                <img src="images/rule/battle_4.jpg" alt="" class="relative right-2 bottom-2 aspect-auto object-cover brightness-75">
+            </div>
+            <div class="mx-auto my-16 md:my-24 px-4 md:px-8 border-l-[2px] border-fuchsia-500 space-y-6 md:space-y-12">
+                <h2 class="w-fit pl-2 pr-8 py-1 text-2xl md:text-4xl font-bold ">型に捕らわれるな。</h2>
+                <p class="text-sm md:text-xl leading-8 md:leading-10">
+                    「どこを打っても勝ち」という洗練されたルール。<br>
+                    フリースタイルの剣術バトルは常識が通用しない。<br>
+                    自分の戦い方を確立し、会心の一撃を決めろ。
+                </p>
+            </div> 
+        </div>
+        <div class="md:flex items-center justify-between md:py-24">
+            <div class="mx-auto my-24 px-4 md:px-8 border-l-[2px] border-cyan-500 space-y-6 md:space-y-12">
+                <h2 class="w-fit pl-2 pr-8 py-1 text-2xl md:text-4xl font-bold">敵を観察せよ。</h2>
+                <p class="text-sm md:text-xl leading-8 md:leading-10">
+                    どんな相手にも隙は必ずある。<br>
+                    敵の行動を分析し、<br>
+                    冷静に、時に大胆に弱点を突け。<br>
+                </p>
+            </div> 
+            <div class="w-full md:w-[55vw] h-fit bg-cyan-800 overflow-hidden">
+                <img src="images/rule/battle_5.png" alt="" class="relative left-2 bottom-2 aspect-auto object-cover brightness-75">
+            </div>
+        </div>
+
+        <div class="pt-24">
+            <h2 class="my-4 text-3xl md:text-5xl font-bold text-center">試合のルール</h2>
+            <div class="mx-auto h-0.5  w-full md:w-[60vw] bg-slate-50"></div>
+
+            <p class="mx-auto w-fit px-4 md:px-24 py-12 md:py-24 text-sm/8 md:text-lg/10">
+                スポーツチャンバラの大会は基本的にトーナメント形式です。<br>
+                武道の一種でもあるので、試合は礼に始まり礼に終わります。<br>
+                試合時間は1分間。相打ちになったら再試合を行います。<br>
+                <br>
+                選手は6~8mの正方形のコートで戦います。<br>
+                場外反則は2回で失格です。<br>
+                時には戦略的に一度場外に出て、形勢を立て直すこともあります。<br>
+                <br>
+                3人の審判が判定を下します。<br>
+                判定に不服がある場合は選手は一度だけ異議を唱えることができます。<br>
+                ビデオ判定などを踏まえて公正な再判定が行われます。<br>
+                <br>
+                また、「かばい手」という特殊なルールがあります。<br>
+                一度だけ自分の武器を持っていない方の手で身を守ることができます。<br>
+                「かばい手」をした選手は、その試合では以降腕を背中に回して戦います。<br>
+            </p>
+        </div>
+    </section>
+
+     <section class="px-4 md:px-24 pt-8 md:pt-16 pb-8 md:pb-24 bg-gray-200 rounded-3xl text-slate-950">
+        <div class="flex items-center justify-start gap-2">
+            <div class="relative size-14">
+                <div class="absolute bottom-2 right-2 size-8 bg-turquoise/60"></div>
+                <div class="absolute top-2 left-2 size-8 bg-fuchsia-500/60"></div>
+            </div>
+            <h2 class="w-fit text-2xl md:text-4xl font-bold">主な競技規則</h2>
+        </div>
+        
+        <ul id="accordion-list" class="grid grid-cols-1 md:grid-cols-2 my-8 gap-x-8 gap-y-2 md:gap-y-4"></ul>
+    </section>
+
+    <section class="px-6 md:px-24 pt-24 :pt-48 pb-16 md:pb-32 bg-gray-800 text-slate-50">
+        <div class="">
+            <div class="flex items-end justify-start gap-4 md:gap-12 py-2">
+                <h2 class="w-fit text-4xl md:text-6xl font-bold">Weapons</h2>
+                <h3 class="w-fit px-2 py-1 text-xl: md:text-3xl font-bold">武器一覧</h3>
+            </div>
+            <div class="md:flex items-start justify-start gap-0">
+                <div class="grow h-0.5 bg-slate-50"></div>
+                <div class="w-full md:w-[40vw] md:border-b-[2px] md:border-l-[2px] border-slate-50">
+                    <p class="px-2 md:px-8 py-2 text-sm md:text-lg font-semibold">
+                    スポーツチャンバラには10種類以上の種目があります。<br>
+                    動画付きで解説します。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal" class="modal modal-hide fixed inset-0 px-0 pt-24 md:p-0 z-50 bg-black/30 flex items-center justify-center">
+            <div class="modal-content modal-slided relative z-0 w-full md:w-[80vw] h-full md:h-[90vh] bg-myblack rounded-t-3xl md:rounded-sm transition duration-300">
+
+                <div class="absolute z-10 w-full h-full">
+                    <div class="absolute -top-6 md:-top-52 -left-6 size-64 md:size-96 bg-turquoise rotate-6 "></div>
+                    <div class="absolute -bottom-12 -right-12 size-[35vw] bg-fuchsia-500 -rotate-12"></div>
+                </div>
+
+                <div class="modal-closer absolute z-40 top-4 right-4 text-slate-50 text-lg text-end">✕</div>
+
+
+                <div class="md:flex items-start gap-0 relative h-full z-20">
+                    <div class="flex flex-col items-start justify-between gap-4 w-full md:w-1/2 h-full px-0 md:pl-8 md:pr-6 py-8">
+                        <p id="modal-title" class="px-4 md:px-0 text-4xl md:text-6xl">タイトル</p>
+                        
+                        <video autoplay loop muted src="videos/rule/小太刀_一本.mp4" class="modal-video md:hidden inline-block"></video>
+
+                        <div class="flex items-center justify-center h-full px-4 md:px-0 py-0">
+                            <p id="modal-text" class="text-base/8 md:text-lg/10 whitespace-pre-line drop-shadow-lg">
+                            説明
+                            </p>
+                        </div>  
+                    </div>
+                    <div class="hidden md:flex flex-col items-center justify-center gap-0 w-full h-full px-4">
+                        <video autoplay loop muted src="videos/rule/小太刀_一本.mp4" class="modal-video inline-block"></video>
+                    </div>   
+                </div>
+
+            </div>
+        </div>
+        
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 md:px-8 my-16 md:my-32 text-slate-50">
+            <li data-id="kodachi" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/kodachi.jpg')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">小太刀</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="choken" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/choken.jpg')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">長剣フリー</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="tatekodachi" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/tatekodachi.jpg')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">楯小太刀</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="ryote" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/ryote.JPG')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">両手長剣</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="nito" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/nito.jpg')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">二刀</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="tatechoken" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/tatechoken.jpg')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">楯長剣</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="choso" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/choso.jpg')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">長槍</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="bo" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/bo.jpg')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">棒</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="tanto" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/tanto.jpg')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">短刀</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="tanso" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/tanso.png')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">短槍</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-id="jo" class="modal-button">
+                <div class="relative aspect-[1/1] overflow-hidden group">
+                    <div class="bg-[url('images/rule/weapons/jo.png')] w-full h-full bg-cover transition duration-300 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 z-40 w-full h-full p-2 bg-black/50">
+                        <div class="flex items-center justify-center w-full h-full border-[1px] border-slate-50">
+                            <p class="text-5xl text-slate-50 text-center">杖</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="text-slate-50">
+        <div class="bg-fixed bg-[url('images/rule/grachan/main.jpg')] bg-cover bg-bottom">
+            <div class="relative px-6 md:px-24 pt-40 md:pt-80 pb-24 md:pb-48 bg-gradient-to-b from-myblack via-myblack to-myblack/80">
+                <div class="relative z-10">
+                    <div class="relative text-5xl md:text-8xl">
+                        <h2 class="absolute top-0.5 left-0.5 w-fit text-turquoise font-serif font-bold">GRAND CHAMPION</h2>
+                        <h2 class="absolute -top-0.5 -left-0.5 w-fit text-fuchsia-500 font-serif font-bold">GRAND CHAMPION</h2>
+                        <h2 class="relative z-30 w-fit pr-4 text-slate-950 font-serif font-bold">GRAND CHAMPION</h2>    
+                    </div>   
+                    <div class="my-2 h-0.5 bg-turquoise"></div>
+                    <div class="text-turquoise text-2xl md:text-5xl font-bold text-end drop-shadow-lg drop-shadow-">グランドチャンピオン戦</div>
+                </div>
+            </div>
+            <div class="h-24 md:h-[30vh] bg-gradient-to-b from-myblack/80 via-myblack/50 to-myblack/0"></div>
+
+            <div class="px-[20vw] pb-32">
+                <div class="flex justify-center py-16">
+                    <h2 class="text-6xl leading-snug md:text-8xl md:leading-snug font-bold [writing-mode:vertical-rl] drop-shadow-xl">
+                        <span class="bg-fuchsia-500/50">懸けられる</span><br>
+                        ものが<br>
+                        あるから。
+                    </h2>
+                </div>
+                <div class="flex justify-center py-16 md:py-32">
+                    <p class="p-8 text-sm md:text-2xl leading-snug md:leading-snug [writing-mode:vertical-rl] drop-shadow-xl bg-black/25">
+                        二〇二五年、冬。<br>
+                        予選を勝ち抜き全国から剣豪が集まる<br>
+                        全日本学生選手権大会のエントリー数は<br>
+                        過去最大の五百人に上った。<br>
+                        <br>
+                        実力者達が激しくぶつかり合う<br>
+                        トーナメントはまさに魔境。<br>
+                        <br>
+                        そんな各種目の激戦を勝ち抜いた優勝者達が、<br>
+                        自らの武器を持って最後のコートへ集結する。<br>
+                        <br>
+                        真の王者を決める闘い<br>
+                        グランドチャンピオン戦が<br>
+                        今、幕を開ける———<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="h-24 md:h-[30vh] bg-gradient-to-t from-myblack/80 via-myblack/50 to-myblack/0"></div>
+            <div class="h-24 md:h-[50vh] bg-gradient-to-t from-myblack to-myblack/80"></div>
+            <div class="h-24 md:h-[50vh] bg-myblack"></div>
+        </div>
+
+        <div class="relative pt-24 md:pt-64 pb-24 md:pb-48">
+            <div class="overflow-hidden w-full">
+                <div id="marquee" class="flex w-max h-64 md:h-screen divide-x-4 divide-myblack">
+                    <!-- items -->
+                    <img src="images/rule/grachan/gallery_1.jpg" alt="" class="h-full aspect-auto">
+                    <img src="images/rule/grachan/gallery_2.jpg" alt="" class="h-full aspect-auto">        
+                    <img src="images/rule/grachan/gallery_4.jpg" alt="" class="h-full aspect-auto">
+                    <img src="images/rule/grachan/gallery_5.jpg" alt="" class="h-full aspect-auto">
+                </div>
+            </div>
+        </div>
+
+        <div class="pb-32 mt:pb-64 space-y-12 md:space-y-24">
+            <h2 class="text-3xl md:text-6xl font-bold text-center">この感動を、<span class="py-1 bg-cyan-800">颯剣会</span>で。</h2>
+            <a href="contact.html" class="block">
+                <div class="flex items-center justify-center mx-auto w-56 h-14 border-[2px] border-turquoise transition-all duration-300 hover:bg-turquoise hover:-translate-y-1">
+                    <p class="text-lg text-slate-50 font-bold">Contact Us</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+</body>
+
+</html>

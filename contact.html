@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    turquoise:'#5ce1e6',
+                    myblack:'#121212',
+                }
+            }
+        }
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+    <script src="js/index.js"></script> 
+    <script src="js/include.js"></script>
+
+
+    <style>
+    @keyframes down {
+    0% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(0,80px);
+    }
+    }
+    .scroll-bar {
+        animation: 3s forwards down infinite;
+    }
+    </style>
+    <title></title>
+</head>
+
+<body class="bg-myblack overscroll-y-none">
+    <div id="header" class="sticky top-0 z-50">
+        <div class="h-20 bg-myblack/50"></div>
+    </div>
+
+    <div id="drawer" class=""></div>
+
+
+    <section class="px-6 md:px-24 pt-16 md:pt-32 text-slate-50">
+        <div class="md:flex items-start justify-start gap-0">
+            <div class="">
+                <div class="h-0.5 w-full md:w-[60vw] bg-slate-50"></div>
+                <div class="md:flex items-center justify-start gap-12 space-y-4 md:space-y-0">
+                    <div class="relative md:h-32 w-fit text-5xl md:text-8xl">
+                        <h2 class="absolute top-0.5 left-0.5 w-fit text-turquoise font-serif font-bold">Contact</h2>
+                        <h2 class="absolute -top-0.5 -left-0.5 w-fit text-fuchsia-500 font-serif font-bold">Contact</h2>
+                        <h2 class="relative z-30 w-fit pr-4 text-slate-50 font-serif font-bold">Contact</h2>    
+                    </div>   
+                    <div class="w-fit text-slate-50 text-2xl md:text-5xl font-bold bg-cyan-800">連絡</div>
+                </div>
+                
+            </div>
+            
+            <div class="w-full md:w-[40vw] md:pl-8 py-4 md:border-l-[2px] md:border-b-[2px] border-slate-50">
+                <p class="text-base md:text-lg/8">
+                    ご連絡は下記の各種SNSのDMからお願いいたします。<br>
+                    体験会のお申込みの際は注意事項をよくお読みください。
+                </p>
+            </div>  
+        </div>      
+    </section>
+    <section class="px-6 md:px-24 py-8 md:py-32 text-slate-50">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-16 md:mb-32">
+            <div class="px-4 py-4 bg-cyan-700 w-full md:w-auto">
+                <div class="md:flex items-center justify-start gap-6 md:gap-12 px-6 md:px-12 py-6 md:py-12 bg-black/30">
+                    <div class="flex flex-col items-center justify-center gap-1 py-4">
+                        <h4 class="text-lg md:text-xl font-semibold">X</h4>
+                        <a href="https://x.com/souken2026">
+                            <img src="images/icons/x-social-media-logo-icon.svg" alt="" class="size-16 md:size-24">
+                        </a>
+                        <p class="text-sm md:text-lg text-center">@souken2026</p>
+                    </div>
+                    <div class="space-y-8">
+                        <a href="https://x.com/souken2026" class="block">
+                            <div class="flex items-center justify-center mx-auto w-56 h-14 border-[2px] border-turquoise transition-all duration-300 hover:bg-turquoise hover:-translate-y-1">
+                                <p class="text-lg text-slate-50 font-bold">Jump to X</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4 py-4 bg-fuchsia-800 w-full md:w-auto">
+                <div class="md:flex items-center justify-start gap-6 md:gap-12 px-6 md:px-12 py-6 md:py-12 bg-black/30">
+                    <div class="flex flex-col items-center justify-center gap-1 py-4">
+                        <h4 class="text-lg md:text-xl font-semibold">Instagram</h4>
+                        <a href="https://www.instagram.com/spochan_soken/">
+                            <img src="images/icons/ig-instagram-icon.svg" alt="" class="size-16 md:size-24">
+                        </a>
+                       <p class="text-sm md:text-lg text-center">@spochan_soken</p>
+                    </div>
+                    <div class="space-y-8">
+                        <a href="https://www.instagram.com/spochan_soken/" class="block">
+                            <div class="flex items-center justify-center mx-auto w-56 h-14 border-[2px] border-fuchsia-500 transition-all duration-300 hover:bg-fuchsia-500 hover:-translate-y-1">
+                                <p class="text-lg text-slate-50 font-bold">Jump to Instagram</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="mx-auto py-8 md:py-16 border-[1px] space-y-12 border-slate-50">
+            <h3 class="text-xl md:text-4xl font-bold text-center">体験会参加方法</h3>
+            <div class="md:flex items-center justify-center gap-12 px-4 md:px-24">
+                <ul class="flex flex-col items-start justify-between gap-12 pb-12 md:pb-0">
+                    <li class="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-8 w-full md:w-auto">
+                        <div class="flex items-center justify-center size-12 md:size-16 bg-cyan-700 rounded-full shrink-0">
+                            <p class="text-lg md:text-2xl font-mono font-bold">01</p>
+                        </div>
+                        <p class="text-sm md:text-lg">
+                            DMで「◯月◯日の体験会に◯人で参加したいです！」と連絡。
+                            人数に余裕があればOKの返信が来ます。
+                        </p>
+                    </li>
+                    <li class="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-8 w-full md:w-auto">
+                        <div class="flex items-center justify-center size-12 md:size-16 bg-cyan-700 rounded-full shrink-0">
+                            <p class="text-lg md:text-2xl font-mono font-bold">02</p>
+                        </div>
+                        <p class="text-sm md:text-lg">
+                            体験会の数日前に集合場所・時刻の告知があります。遅れる場合は連絡をください。
+                        </p>
+                    </li>
+                    <li class="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-8 w-full md:w-auto">
+                        <div class="flex items-center justify-center size-12 md:size-16 bg-cyan-700 rounded-full shrink-0">
+                            <p class="text-lg md:text-2xl font-mono font-bold">03</p>
+                        </div>
+                        <p class="text-sm md:text-lg">
+                            思いっきり楽しみましょう！！
+                        </p>
+                    </li>
+                </ul>
+                <div class="px-4 py-4 bg-cyan-700">
+                    <div class="px-6 md:px-16 py-4 md:py-8 space-y-2 bg-black/30">
+                        <h4 class="text-lg md:text-xl font-semibold">持ち物</h4>
+                        <p class="text-sm md:text-lg">
+                        ・動きやすい服装（汗をかきます）<br>
+                        ・タオル<br>
+                        ・飲み物<br>
+                        ※裸足で行うので靴は不要です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    turquoise:'#5ce1e6',
+                    myblack:'#121212',
+                }
+            }
+        }
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+    <script src="js/index.js"></script>
+    <script src="js/include.js"></script>
+
+
+    <style>
+    @keyframes down {
+    0% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(0,80px);
+    }
+    }
+    .scroll-bar {
+        animation: 3s forwards down infinite;
+    }
+    </style>
+    <title></title>
+</head>
+
+<body class="bg-myblack overscroll-y-none">
+    <div id="header" class="sticky top-0 z-50">
+        <div class="h-20 bg-myblack/50"></div>
+    </div>
+    <div id="drawer" class=""></div>
+
+
+    <section class="px-2 md:px-24 pt-16 md:pt-32 pb-24 md:pb-48 text-slate-50">
+        <div class="px-6 md:px-0">
+            <div class="h-0.5 w-full md:w-[60vw] bg-slate-50"></div>
+            <div class="md:flex items-center justify-start gap-12 space-y-4 md:space-y-0">
+                <div class="relative md:h-32 w-fit text-5xl md:text-8xl">
+                    <h2 class="absolute top-0.5 left-0.5 w-fit text-turquoise font-serif font-bold">Records</h2>
+                    <h2 class="absolute -top-0.5 -left-0.5 w-fit text-fuchsia-500 font-serif font-bold">Records</h2>
+                    <h2 class="relative z-30 w-fit pr-4 text-slate-50 font-serif font-bold">Records</h2>    
+                </div>   
+                <div class="w-fit text-slate-50 text-2xl md:text-5xl font-bold bg-cyan-800">戦績</div>
+            </div>      
+        </div>
+        
+        <ul class="my-16 px-4 md:px-24 py-0 md:py-8  text-slate-50 border-[1px] border-gray-600 divide-y-[1px] divide-gray-600">
+            <li class="">
+                <div class="flex flex-col md:flex-row items-center justify-start gap-8 md:gap-24 px-0 md:px-12 py-4 md:py-12">
+                    <img src="images/record/totaikai.jpg" alt="" class="w-64 h-64 bg-gray-500 object-cover">
+                    <div class="space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-sm md:text-lg text-gray-300 font-mono">2026.3.15</p>
+                            <div class="flex items-center justify-start gap-8">
+                                <h4 class="w-fit text-2xl md:text-4xl font-semibold">東京都大会</h4>
+                            </div>
+                            <div class="h-0.5 w-2/3 bg-slate-50"></div>
+                        </div>
+                        <div class="px-2 space-y-4 text-sm/8 md:text-lg/8">
+                            <p class="text-xs md:text-base">
+                            4名の部員が出場しました。<br>
+                            普段はエントリーしない種目での入賞が多数あり、本人たちもびっくりでした。
+                            </p>
+                            <div>
+                                <h5 class="my-2 text-lg md:text-xl font-semibold">一般の部</h5>
+                                <p class="px-2">
+                                    楯小太刀 準優勝<br>
+                                    長剣両手 準優勝,3位<br>
+                                    楯長剣 準優勝
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="my-2 text-lg md:text-xl font-semibold">団体戦</h5>
+                                <p class="px-2">
+                                    準優勝
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="my-2 text-lg md:text-xl font-semibold">フレッシュマン</h5>
+                                <p class="px-2">
+                                    小太刀 優勝
+                                </p>
+                            </div>
+                        </div>           
+                    </div>                
+                </div>
+            </li>
+            <li class="">
+                <div class="flex flex-col md:flex-row items-center justify-start gap-8 md:gap-24 px-0 md:px-12 py-8 md:py-12">
+                    <img src="images/record/reikentaikai.jpg" alt="" class="w-64 h-64 bg-gray-500 object-cover">
+                    <div class="space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-sm md:text-lg text-gray-300 font-mono">2026.2.22</p>
+                            <div class="flex items-center justify-start gap-8">
+                                <h4 class="w-fit text-2xl md:text-4xl font-semibold">令剣大会</h4>
+                            </div>
+                            <div class="h-0.5 w-2/3 bg-slate-50"></div>
+                        </div>
+                        <div class="px-2 space-y-4 text-sm/8 md:text-lg/8">
+                            <p class="text-xs md:text-base">
+                            6名の部員が出場しました。<br>
+                            OBOGも多くエントリーする、非常にレベルの高い大会でした
+                            </p>
+                            <div>
+                                <h5 class="my-2 text-lg md:text-xl font-semibold">有段の部</h5>
+                                <p class="px-2">
+                                    長剣フリー 敢闘賞
+                                </p>
+                            </div>
+                        </div>           
+                    </div>                
+                </div>
+            </li>
+            <li class="">
+                <div class="flex flex-col md:flex-row items-center justify-start gap-8 md:gap-24 px-0 md:px-12 py-8 md:py-12">
+                    <img src="images/record/zengaku.jpg" alt="" class="w-64 h-64 bg-gray-500 object-cover">
+                    <div class="space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-sm md:text-lg text-gray-300 font-mono">2025.12.13</p>
+                            <div class="flex items-center justify-start gap-8">
+                                <h4 class="w-fit text-2xl md:text-4xl font-semibold">全日本学生大会</h4>
+                            </div>
+                            <div class="h-0.5 w-2/3 bg-slate-50"></div>
+                        </div>
+                        <div class="px-2 space-y-4 text-sm/8 md:text-lg/8">
+                            <p class="text-xs md:text-base">
+                            予選を突破した部員が出場しました。<br>
+                            学生大会では最大規模の大会で、皆気合が入っていました。
+                            </p>
+                            <div>
+                                <h5 class="my-2 text-lg md:text-xl font-semibold">上級生男子の部</h5>
+                                <p class="px-2">
+                                    小太刀 Sクラス 3位<br>
+                                    長剣両手 Aクラス 優勝
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="my-2 text-lg md:text-xl font-semibold">新人男子の部</h5>
+                                <p class="px-2">
+                                    小太刀 3位
+                                </p>
+                            </div>
+                        </div>           
+                    </div>                
+                </div>
+            </li>
+        </ul>
+        
+        <!-- 
+        <div class="mx-auto flex items-center justify-center border-[2px] border-fuchsia-500 w-56 h-14 rounded-full transition-all duration-300 hover:bg-fuchsia-500 hover:-translate-y-1">
+            <p class="text-xl text-slate-50 font-semibold text-center">Show More</p>
+        </div>
+         -->
+
+    </section>
+    <div id="footer"></div>
+</body>
+
+</html>
