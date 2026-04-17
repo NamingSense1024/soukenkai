@@ -15,7 +15,7 @@ function FadeIn(){
         }
         });
     }, {
-        threshold: 0.25
+        threshold: 0.1
     });
 
     targets.forEach(target => observer.observe(target));
