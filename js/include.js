@@ -1,11 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-  loadHTML("header", "components/header.html",HeaderFade);
+document.addEventListener("DOMContentLoaded",async () => {
+  await loadHTML("header", "components/header.html",HeaderFade);
   loadHTML("footer", "components/footer.html");
-  loadHTML("drawer", "components/drawer.html",Hamburger);
+  await loadHTML("drawer", "components/drawer.html");
+  Hamburger();
+  HideLoading();
 });
 
 function loadHTML(id, url,callback) {
-  fetch(url)
+  return fetch(url)
     .then(res => res.text())
     .then(data => {
       document.getElementById(id).innerHTML = data;
@@ -15,12 +17,12 @@ function loadHTML(id, url,callback) {
 }
 
 function HeaderFade(){
-  const header_fade = document.getElementById("header-fade");
+  // const header_fade = document.getElementById("header-fade");
 
-  setTimeout(()=>{
-    header_fade.classList.remove("opacity-0");
-    header_fade.classList.remove("translate-y-2");
-  },25);
+  // setTimeout(()=>{
+  //   header_fade.classList.remove("opacity-0");
+  //   header_fade.classList.remove("translate-y-2");
+  // },25);
 }
 
 function Hamburger(){
@@ -40,4 +42,9 @@ function Hamburger(){
       content.classList.add("drawer-slided");
     }
   });
+}
+
+function HideLoading(){
+  const overlay = document.getElementById("loading");
+  overlay.classList.add("opacity-0")
 }

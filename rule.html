@@ -22,7 +22,27 @@
     <script src="js/index.js"></script>
     <script src="js/include.js"></script>
     <script src="js/rule.js"></script>
+    <script src="js/bottom_sheet.js"></script>
     
+    <style>
+    .fade-in{
+        transition: all 0.5s ease-out;
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    .fade-show{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fade-ver{
+        transition: transform 1s cubic-bezier(0.33, 1, 0.68, 1);
+        transform: translateX(-100%);
+    }
+    .fade-ver-show{
+        transform: translateX(0);
+    }
+    </style>
 
     <style>
     @keyframes down {
@@ -70,10 +90,12 @@
 
 <body class="bg-myblack overscroll-y-none">
     <div id="header" class="sticky top-0 z-50">
-        <div class="h-20 bg-myblack/50"></div>
+        <div class="h-12 md:h-20 bg-myblack/50"></div>
     </div>
-    <div id="drawer" class=""></div>
 
+    <div id="loading" class="fixed inset-0 z-50 bg-myblack pointer-events-none transition duration-1000"></div>
+
+    <div id="drawer" class=""></div>
 
    <section class="px-6 md:px-24 pt-16 md:pt-32 pb-4 md:pb-8 text-slate-50">
         <div class="">
@@ -95,8 +117,8 @@
                 <img src="images/rule/battle_4.jpg" alt="" class="relative right-2 bottom-2 aspect-auto object-cover brightness-75">
             </div>
             <div class="mx-auto my-16 md:my-24 px-4 md:px-8 border-l-[2px] border-fuchsia-500 space-y-6 md:space-y-12">
-                <h2 class="w-fit pl-2 pr-8 py-1 text-2xl md:text-4xl font-bold ">型に捕らわれるな。</h2>
-                <p class="text-sm md:text-xl leading-8 md:leading-10">
+                <h2 class="fade-in w-fit pl-2 pr-8 py-1 text-2xl md:text-4xl font-bold ">型に捕らわれるな。</h2>
+                <p class="fade-in text-sm md:text-xl leading-8 md:leading-10">
                     「どこを打っても勝ち」という洗練されたルール。<br>
                     フリースタイルの剣術バトルは常識が通用しない。<br>
                     自分の戦い方を確立し、会心の一撃を決めろ。
@@ -105,8 +127,8 @@
         </div>
         <div class="md:flex items-center justify-between md:py-24">
             <div class="mx-auto my-24 px-4 md:px-8 border-l-[2px] border-cyan-500 space-y-6 md:space-y-12">
-                <h2 class="w-fit pl-2 pr-8 py-1 text-2xl md:text-4xl font-bold">敵を観察せよ。</h2>
-                <p class="text-sm md:text-xl leading-8 md:leading-10">
+                <h2 class="fade-in w-fit pl-2 pr-8 py-1 text-2xl md:text-4xl font-bold">敵を観察せよ。</h2>
+                <p class="fade-in text-sm md:text-xl leading-8 md:leading-10">
                     どんな相手にも隙は必ずある。<br>
                     敵の行動を分析し、<br>
                     冷静に、時に大胆に弱点を突け。<br>
@@ -118,36 +140,44 @@
         </div>
 
         <div class="pt-24">
-            <h2 class="my-4 text-3xl md:text-5xl font-bold text-center">試合のルール</h2>
+            <h2 class="fade-in my-4 text-3xl md:text-5xl font-bold text-center">試合のルール</h2>
             <div class="mx-auto h-0.5  w-full md:w-[60vw] bg-slate-50"></div>
 
             <p class="mx-auto w-fit px-4 md:px-24 py-12 md:py-24 text-sm/8 md:text-lg/10">
+                <span class="fade-in">
                 スポーツチャンバラの大会は基本的にトーナメント形式です。<br>
                 武道の一種でもあるので、試合は礼に始まり礼に終わります。<br>
                 試合時間は1分間。相打ちになったら再試合を行います。<br>
+                </span>
+                <span class="fade-in">
                 <br>
                 選手は6~8mの正方形のコートで戦います。<br>
                 場外反則は2回で失格です。<br>
                 時には戦略的に一度場外に出て、形勢を立て直すこともあります。<br>
+                </span>
+                <span class="fade-in">
                 <br>
                 3人の審判が判定を下します。<br>
                 判定に不服がある場合は選手は一度だけ異議を唱えることができます。<br>
                 ビデオ判定などを踏まえて公正な再判定が行われます。<br>
+                </span>
+                <span class="fade-in">
                 <br>
                 また、「かばい手」という特殊なルールがあります。<br>
                 一度だけ自分の武器を持っていない方の手で身を守ることができます。<br>
                 「かばい手」をした選手は、その試合では以降腕を背中に回して戦います。<br>
+                </span>
             </p>
         </div>
     </section>
 
-     <section class="px-4 md:px-24 pt-8 md:pt-16 pb-8 md:pb-24 bg-gray-200 rounded-3xl text-slate-950">
+    <section class="px-4 md:px-24 pt-8 md:pt-16 pb-8 md:pb-24 bg-gray-200 rounded-3xl text-slate-950">
         <div class="flex items-center justify-start gap-2">
             <div class="relative size-14">
                 <div class="absolute bottom-2 right-2 size-8 bg-turquoise/60"></div>
                 <div class="absolute top-2 left-2 size-8 bg-fuchsia-500/60"></div>
             </div>
-            <h2 class="w-fit text-2xl md:text-4xl font-bold">主な競技規則</h2>
+            <h2 class="fade-in w-fit text-2xl md:text-4xl font-bold">主な競技規則</h2>
         </div>
         
         <ul id="accordion-list" class="grid grid-cols-1 md:grid-cols-2 my-8 gap-x-8 gap-y-2 md:gap-y-4"></ul>
@@ -155,7 +185,7 @@
 
     <section class="px-6 md:px-24 pt-24 :pt-48 pb-16 md:pb-32 bg-gray-800 text-slate-50">
         <div class="">
-            <div class="flex items-end justify-start gap-4 md:gap-12 py-2">
+            <div class="fade-in flex items-end justify-start gap-4 md:gap-12 py-2">
                 <h2 class="w-fit text-4xl md:text-6xl font-bold">Weapons</h2>
                 <h3 class="w-fit px-2 py-1 text-xl: md:text-3xl font-bold">武器一覧</h3>
             </div>
@@ -171,17 +201,19 @@
         </div>
 
         <div id="modal" class="modal modal-hide fixed inset-0 px-0 pt-24 md:p-0 z-50 bg-black/30 flex items-center justify-center">
-            <div class="modal-content modal-slided relative z-0 w-full md:w-[80vw] h-full md:h-[90vh] bg-myblack rounded-t-3xl md:rounded-sm transition duration-300">
+            <div class="modal-content modal-slided relative z-0 w-full md:w-[80vw] h-full md:h-[90vh] bg-myblack rounded-t-3xl md:rounded-md transition duration-300">
 
                 <div class="absolute z-10 w-full h-full">
                     <div class="absolute -top-6 md:-top-52 -left-6 size-64 md:size-96 bg-turquoise rotate-6 "></div>
                     <div class="absolute -bottom-12 -right-12 size-[35vw] bg-fuchsia-500 -rotate-12"></div>
                 </div>
 
-                <div class="modal-closer absolute z-40 top-4 right-4 text-slate-50 text-lg text-end">✕</div>
+                <div class="modal-closer hidden md:inline absolute z-40 top-4 right-4 text-slate-50 text-lg text-end">✕</div>
 
 
                 <div class="md:flex items-start gap-0 relative h-full z-20">
+                    <div class="md:hidden mx-auto my-3 w-48 h-1 rounded-full bg-gray-400"></div>
+
                     <div class="flex flex-col items-start justify-between gap-4 w-full md:w-1/2 h-full px-0 md:pl-8 md:pr-6 py-8">
                         <p id="modal-title" class="px-4 md:px-0 text-4xl md:text-6xl">タイトル</p>
                         
@@ -315,9 +347,12 @@
         </ul>
     </section>
 
-    <section class="text-slate-50">
-        <div class="bg-fixed bg-[url('images/rule/grachan/main.jpg')] bg-cover bg-bottom">
-            <div class="relative px-6 md:px-24 pt-40 md:pt-80 pb-24 md:pb-48 bg-gradient-to-b from-myblack via-myblack to-myblack/80">
+    <section class="relative -z-10 text-slate-50">
+        <img src="images/rule/grachan/main_3.jpg" class="md:hidden sticky top-0 h-screen w-screen z-0 object-cover object-bottom"></div>
+        <img src="images/rule/grachan/main_1.jpg" class="hidden md:inline sticky top-0 h-screen w-screen z-0 object-cover object-bottom"></div>
+
+        <div class="relative -top-[100vh] z-10">      
+            <div class="relative px-6 md:px-24 pt-40 md:pt-80 pb-32 md:pb-48 bg-gradient-to-b from-myblack via-myblack to-myblack/80">
                 <div class="relative z-10">
                     <div class="relative text-5xl md:text-8xl">
                         <h2 class="absolute top-0.5 left-0.5 w-fit text-turquoise font-serif font-bold">GRAND CHAMPION</h2>
@@ -328,15 +363,21 @@
                     <div class="text-turquoise text-2xl md:text-5xl font-bold text-end drop-shadow-lg drop-shadow-">グランドチャンピオン戦</div>
                 </div>
             </div>
-            <div class="h-24 md:h-[30vh] bg-gradient-to-b from-myblack/80 via-myblack/50 to-myblack/0"></div>
+            <div class="h-48 md:h-[30vh] bg-gradient-to-b from-myblack/80 via-myblack/50 to-myblack/0"></div>
 
-            <div class="px-[20vw] pb-32">
+            <div class="px-[20vw]">
                 <div class="flex justify-center py-16">
-                    <h2 class="text-6xl leading-snug md:text-8xl md:leading-snug font-bold [writing-mode:vertical-rl] drop-shadow-xl">
-                        <span class="bg-fuchsia-500/50">懸けられる</span><br>
-                        ものが<br>
-                        あるから。
-                    </h2>
+                    <div class="text-6xl leading-snug md:text-8xl md:leading-snug font-bold [writing-mode:vertical-rl] ">
+                        <div class="overflow-hidden">
+                            <p data-delay="0" class="fade-ver bg-fuchsia-500/50 drop-shadow-xl">懸けられる</p>
+                        </div>
+                        <div class="overflow-hidden">
+                            <p data-delay="1" class="fade-ver drop-shadow-xl">ものが</p>
+                        </div>
+                        <div class="overflow-hidden">
+                            <p data-delay="2" class="fade-ver drop-shadow-xl">あるから</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex justify-center py-16 md:py-32">
                     <p class="p-8 text-sm md:text-2xl leading-snug md:leading-snug [writing-mode:vertical-rl] drop-shadow-xl bg-black/25">
@@ -357,13 +398,16 @@
                     </p>
                 </div>
             </div>
-
-            <div class="h-24 md:h-[30vh] bg-gradient-to-t from-myblack/80 via-myblack/50 to-myblack/0"></div>
-            <div class="h-24 md:h-[50vh] bg-gradient-to-t from-myblack to-myblack/80"></div>
-            <div class="h-24 md:h-[50vh] bg-myblack"></div>
         </div>
+        <div class="relative z-10">
+            <div class="h-24 md:h-[20vh] bg-gradient-to-t from-myblack/80 via-myblack/50 to-myblack/0"></div>
+            <div class="h-36 md:h-[40vh] bg-gradient-to-t from-myblack to-myblack/80"></div>
+            <div class="h-[40vh] md:h-[50vh] bg-myblack"></div>
+        </div>
+    </section>
 
-        <div class="relative pt-24 md:pt-64 pb-24 md:pb-48">
+    <section class="text-slate-50">
+        <div class="relative z-10 pb-24 md:pb-48">
             <div class="overflow-hidden w-full">
                 <div id="marquee" class="flex w-max h-64 md:h-screen divide-x-4 divide-myblack">
                     <!-- items -->
@@ -374,9 +418,8 @@
                 </div>
             </div>
         </div>
-
         <div class="pb-32 mt:pb-64 space-y-12 md:space-y-24">
-            <h2 class="text-3xl md:text-6xl font-bold text-center">この感動を、<span class="py-1 bg-cyan-800">颯剣会</span>で。</h2>
+            <h2 class="fade-in text-3xl md:text-6xl font-bold text-center">この感動を、<span class="py-1 bg-cyan-800">颯剣会</span>で。</h2>
             <a href="contact.html" class="block">
                 <div class="flex items-center justify-center mx-auto w-56 h-14 border-[2px] border-turquoise transition-all duration-300 hover:bg-turquoise hover:-translate-y-1">
                     <p class="text-lg text-slate-50 font-bold">Contact Us</p>

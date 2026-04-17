@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   Accordion();
   Modal();
   Marquee();
+  FadeIn_vertical();
 });
 
 async function CreateAccordion() {
@@ -184,8 +185,6 @@ function Modal(){
               video.src = data.video;
               video.load();
             });
-            
-
             ModalOperation(modal,content,false);    
         });     
     });
@@ -204,7 +203,8 @@ function Modal(){
 
 function ModalOperation(modal,content,Flag){
   modal.classList.toggle("modal-hide",Flag); 
-  content.classList.toggle("modal-slided",Flag); 
+  content.classList.toggle("modal-slided",Flag);
+  document.body.classList.toggle("touch-none",!Flag);
 }
 
 function Marquee(){
@@ -229,5 +229,23 @@ function Marquee(){
     }
 
     loop();
+}
 
+function FadeIn_vertical(){
+  const targets = document.querySelectorAll(".fade-ver");
+
+  const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry,index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("fade-ver-show");
+            observer.unobserve(entry.target); // 一度だけ
+          }, (entry.target.dataset.delay * 100 + 100));   
+        }
+        });
+    }, {
+        threshold: 0
+    });
+
+    targets.forEach(target => observer.observe(target));
 }
