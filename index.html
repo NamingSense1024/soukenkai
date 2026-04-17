@@ -32,6 +32,7 @@
         transition: all 0.5s ease-out;
         opacity: 0;
         transform: translateY(2rem);
+        will-change: transform, opacity;
     }
     .fade-show{
         opacity: 1;
@@ -51,6 +52,21 @@
         animation: 3s forwards down infinite;
     }
     </style>
+
+    <style>
+    @media (min-aspect-ratio: 16/9) {
+        .size-lock {
+            height: 100vh;
+            width: auto;
+        }
+    }
+    @media (max-aspect-ratio: 16/9) {
+        .size-lock {
+            width: 100vw;
+            height: auto;
+        }
+    }
+    </style>
     <title></title>
 </head>
 
@@ -64,9 +80,8 @@
     <div id="drawer" class=""></div>
 
     <div class="flex justify-between relative">
-        <img src="images/home/hero.png" alt="" class="hidden md:inline max-h-screen object-contain">
-        <img src="images/home/hero_mobile.png" alt="" class="md:hidden w-full object-contain">
-        <div class="hidden md:inline-block relative w-full"></div>
+        <img data-src="images/home/hero.png" src="images/home/hero_low.png" alt="" class="img-lg hidden md:inline size-lock object-contain blur-md">
+        <img data-src="images/home/hero_mobile.png" src="images/home/hero_mobile_low.png" alt="" class="img-lg md:hidden w-full object-contain blur-md">
         <div class="hidden md:inline absolute bottom-0 right-24">
                 <div class="flex gap-1">
                     <div class="relative flex flex-col items-center">

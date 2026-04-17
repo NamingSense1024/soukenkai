@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded",async () => {
   await loadHTML("drawer", "components/drawer.html");
   Hamburger();
   HideLoading();
+  BigImage();
 });
 
 function loadHTML(id, url,callback) {
@@ -47,4 +48,18 @@ function Hamburger(){
 function HideLoading(){
   const overlay = document.getElementById("loading");
   overlay.classList.add("opacity-0")
+}
+
+function BigImage(){
+  const images = document.querySelectorAll(".img-lg");
+
+  images.forEach((img) => {
+    const highRes = new Image();
+    highRes.src = img.dataset.src;
+
+    highRes.onload = () => {
+      img.src = highRes.src;
+      img.classList.remove("blur-md");
+    };
+  });
 }
