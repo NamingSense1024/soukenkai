@@ -33,7 +33,7 @@ function ChangeContent(){
             document.getElementById("modal-text").textContent = data.description;
 
             document.querySelectorAll(".modal-video").forEach(video =>{
-              video.src = data.video;
+              video.src = data.video+"#t=0.1";
               video.load();
             });
             OpenSheet();   

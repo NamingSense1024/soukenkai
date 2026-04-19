@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded",async () => {
   await loadHTML("header", "components/header.html");
-  loadHTML("footer", "components/footer.html");
+  await BigImage(); 
+
   Hamburger();
+  loadHTML("footer", "components/footer.html");
+  
+
   HideLoading();
-  BigImage();
 });
 
 function loadHTML(id, url,callback) {
