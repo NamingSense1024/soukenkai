@@ -15,13 +15,14 @@ function FadeIn(){
         }
         });
     }, {
-        threshold: 0.1
+        rootMargin:"-10% 0%",
+        threshold: 0
     });
 
     targets.forEach(target => observer.observe(target));
 }
 
-const lenis = new Lenis();
+window.lenis = new Lenis();
 
 function raf(time) {
   lenis.raf(time);

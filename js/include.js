@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded",async () => {
-  await loadHTML("header", "components/header.html",HeaderFade);
+  loadHTML("header", "components/header.html");
   loadHTML("footer", "components/footer.html");
   await loadHTML("drawer", "components/drawer.html");
   Hamburger();
@@ -17,30 +17,42 @@ function loadHTML(id, url,callback) {
     });
 }
 
-function HeaderFade(){
-  // const header_fade = document.getElementById("header-fade");
-
-  // setTimeout(()=>{
-  //   header_fade.classList.remove("opacity-0");
-  //   header_fade.classList.remove("translate-y-2");
-  // },25);
-}
-
 function Hamburger(){
   const btn = document.getElementById("hamburger");
   const wrapper = document.getElementById("drawer-wrapper");
   const overlay = document.getElementById("drawer-overlay");
   const content = document.getElementById("drawer-content");
+  const bars = hamburger.querySelectorAll(".bar");
+
+  function HamburgerToggle(){//open:true close:false
+    const flag = !wrapper.classList.contains("drawer-hide");
+    if(flag){
+      window.lenis.stop();
+    }else{
+      window.lenis.start();
+    }
+
+    content.classList.toggle("drawer-slided",!flag);
+
+    bars[0].classList.toggle("rotate-[25deg]",flag);
+    bars[0].classList.toggle("translate-y-[8px]",flag);
+
+    bars[1].classList.toggle("opacity-0",flag);
+
+    bars[2].classList.toggle("-rotate-[25deg]",flag);
+    bars[2].classList.toggle("-translate-y-[8px]",flag);
+  }
 
   btn.addEventListener("click", () => {
-    wrapper.classList.remove("drawer-hide");
-    content.classList.remove("drawer-slided");
+    wrapper.classList.toggle("drawer-hide");
+    
+    HamburgerToggle();
   });
 
   overlay.addEventListener("click", (event) => {
     if(event.target.closest('#drawer-content') === null){
       wrapper.classList.add("drawer-hide");
-      content.classList.add("drawer-slided");
+      HamburgerToggle();
     }
   });
 }
