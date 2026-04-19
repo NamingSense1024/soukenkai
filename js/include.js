@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded",async () => {
-  loadHTML("header", "components/header.html");
+  await loadHTML("header", "components/header.html");
   loadHTML("footer", "components/footer.html");
-  await loadHTML("drawer", "components/drawer.html");
   Hamburger();
   HideLoading();
   BigImage();
